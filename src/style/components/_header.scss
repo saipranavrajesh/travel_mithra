@@ -1,0 +1,57 @@
+.title {
+  font-weight: 600;
+  font-size: 28px;
+
+  @media screen and (max-width: 568px) {
+    display: "block";
+  }
+}
+.title-explore {
+  padding-right: 15px;
+  font-size: 16px;
+  margin: auto 0;
+}
+.search {
+  display: flex;
+  position: "relative";
+  border-radius: 5px;
+  background-color: rgba(237, 237, 237, 0.257);
+  margin-right: 2px;
+  margin-left: 0;
+  width: "100%";
+  &:hover {
+    background-color: rgba(237, 237, 237, 0.39);
+  }
+  @media screen and (max-width: 568px) {
+    margin-left: 5px;
+    width: "auto";
+  }
+}
+.searchIcon {
+  padding: 2px;
+  margin-top:5px;
+  margin-left:8px;
+  height: "100%";
+  position: "absolute";
+  pointer-events: "none";
+  display: "flex";
+  align-items: "center";
+  justify-content: "center";
+}
+.inputRoot {
+  &.MuiInputBase-root{
+    color: white;
+  }
+}
+.inputInput {
+  padding: 0px!important;
+  transition: all 0.5s ease;
+  width: "100%";
+  @media screen and (max-width: 768px) {
+    width: "20ch";
+  }
+}
+.toolbar {
+  display: "flex";
+  justify-content: "space-between";
+}

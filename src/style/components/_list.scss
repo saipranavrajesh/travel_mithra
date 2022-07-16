@@ -1,0 +1,28 @@
+.formControl {
+  &.MuiFormControl-root {
+    margin: 4px;
+    min-width: 120px;
+    margin-bottom: 30px;
+  }
+}
+.selectEmpty {
+  margin-top: 8px;
+}
+.loading {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  padding: 25px 25px 0px 25px;
+}
+.marginBottom {
+  margin-bottom: 30px;
+}
+.list {
+  &.MuiGrid-root {
+    height: 75vh;
+    overflow: auto;
+  }
+}
