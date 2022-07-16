@@ -10,13 +10,16 @@ function App() {
   const [places, setPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
   const [bounds, setBounds] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("0");
+
   const [autocomplete, setAutocomplete] = useState(null);
   const [filteredPlaces, setFilteredPlaces] = useState([]);
-
   const [childClicked, setChildClicked] = useState(null);
+
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
@@ -49,14 +52,12 @@ function App() {
   const onPlaceChanged = () => {
     const lat = autocomplete.getPlace().geometry.location.lat();
     const lng = autocomplete.getPlace().geometry.location.lng();
-
     setCoordinates({ lat, lng });
   };
   return (
     <>
       <CssBaseline />
-      <Header onPlaceChanged={onPlaceChanged} onLoad={onLoad}  />
-
+      <Header onPlaceChanged={onPlaceChanged} onLoad={onLoad} />
       <Grid container spacing={3} style={{ width: `100%` }}>
         <Grid item xs={12} md={4}>
           <List

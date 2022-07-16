@@ -18,26 +18,26 @@ function Map({ coordinates, setCoordinates, setBounds, places, setChildClicked }
           setCoordinates({ lat: e.center.lat, lng: e.center.lng });
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
         }}
-         onChildClick={(child)=>(setChildClicked(child))} 
+        onChildClick={(child) => (setChildClicked(child))}
       >
-        {places?.map((place,i) => (
+        {places?.map((place, i) => (
           <div
             className='markerContainer'
             lat={Number(place.latitude)}
             lng={Number(place.longitude)}
             key={i}
-            >
-              {
-                  !isDesktop?(<LocationOnOutlinedIcon color="primary" fontSize="large" />):(
-                    <Paper elevation={3} className='paper'>
-                      <Typography className='typography' variant="subtitle2" gutterBottom>
-                        {place.name}
-                      </Typography>
-                      <img className='pointer' src={place.photo ? place.photo.images.large.url : ''} alt={place.name} />
-                      <Rating name="read-only" size="small" value={Number(place.rating)} readOnly />
-                    </Paper>
-                  )
-              }
+          >
+            {
+              !isDesktop ? (<LocationOnOutlinedIcon color="primary" fontSize="large" />) : (
+                <Paper elevation={3} className='paper'>
+                  <Typography className='typography' variant="subtitle2" gutterBottom>
+                    {place.name}
+                  </Typography>
+                  <img className='pointer' src={place.photo ? place.photo.images.large.url : ''} alt={place.name} />
+                  <Rating name="read-only" size="small" value={Number(place.rating)} readOnly />
+                </Paper>
+              )
+            }
           </div>
         ))}
       </GoogleMapReact>
